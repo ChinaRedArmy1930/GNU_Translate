@@ -1,0 +1,367 @@
+https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/
+
+本文记录了GNU编译器如何使用
+
+版权所有©1988-2018 Free Software Foundation，Inc。
+
+根据GNU自由文档许可证1.3版或自由软件基金会发布的任何更新版本的条款，允许复制，分发和/或修改本文档; 不变部分为“资助自由软件”,封面文本为(a)(见下文),封底文本为(b)(见下文)。许可证的副本包含在标题为“GNU自由文档许可证”的部分中.
+
+自由软件基金会的封面文本为:
+A GNU Manual
+自由软件基金会的最后一页文本为:
+You have freedom to copy and modify this GNU Manual, like GNU software. Copies published by the Free Software Foundation raise funds for GNU development.
+
+简洁目录:
+    1. GCC 支持的编程语言
+    2. GCC 支持的语言标准
+    3. GCC 命令参数(译者注: 编译选项)
+    4. C 实现定义的行为
+    5. C++ 实现定义的行为 
+    6. 扩展到C语言
+    7. 扩展到C++语言
+    8. GNU Object-C特性
+    9. 二进制兼容性
+    10. gcov --代码覆盖率统计工具
+    11. gcov-tool --离线Gcda 文件处理工具
+    12. gcov-dump --离线Gcda 和 Gcno文件dump工具
+    13. GCC 故障已知的原因
+    14. 报告BUG
+    15. GCC 如何获取帮助
+    赞助自由软件
+    GNU 项目和GNU/Linux
+    GNU 通用公共许可
+    GNU 免费文件许可
+    参与GCC
+    选项索引
+    关键字索引
+
+目录:
+    1. GCC 支持的编程语言
+    2. GCC 支持的语言标准
+        2.1  C 语言
+        2.2  C++ 语言
+        2.3  Objective-C 和 Objective-C++ 
+        2.4  go 语言
+        2.5  HSA 中间件语言(HSAIL)  https://en.wikipedia.org/wiki/Intermediate_representation
+        2.6  其他语言参考
+    3. GCC 命令参数(译者注: 编译选项)
+        3.1  选项集合
+        3.2  控制制参数输出
+        3.3  通过参数编译C++程序
+        3.4  通过参数控制C语言特征
+        3.5  通过参数控制C++特征
+        3.6  通过参数控制 Objective-C 和 Objective-C++ 特征
+        3.7  通过参数控制诊断信息格式化
+        3.8  求或禁止警告的选项
+        3.9  调试程序的选项
+        3.10 控制优化选项
+        3.11 程序工具选项
+        3.12 通过参数控制预处理器
+        3.13 将参数传递给汇编程序
+        3.14 链接选项
+        3.15 目录搜索选项
+        3.16 代码生产约定选项
+        3.17 GCC 开发人员选项
+        3.18 机器相关选项
+            3.18.1 AArch64 选项 
+                3.18.1.1  -march 和 -mcpu 特征修饰符
+            3.18.2 Adapteva Epiphany 选项
+            3.18.3 ARC 选项
+            3.18.4 ARM 选项
+            3.18.5 AVR 选项 https://en.wikipedia.org/wiki/Atmel_AVR_instruction_set
+                3.18.5.1 EIND 和大于128KB 的flash设备
+                3.18.5.2 RAMPD RAMPX RAMPY 以及 RAMPZ 特殊功能寄存器的管理
+                3.18.5.3 AVR 内置宏
+           3.18.6 Blackfin 选项
+           3.18.7 C6X 选项
+           3.18.8 CRIS 选项
+           3.18.9 CR16 选项
+           3.18.10 Darwin 选项
+           3.18.11 DEC Alpha 选项
+           3.18.12 FR30 选项
+           3.18.13 FT32 选项
+           3.18.14 FRV 选项
+           3.18.15 GNU/Linux 选项
+           3.18.16 H8/300 选项
+           3.18.17 HPPA 选项
+           3.18.18 IA-64 选项
+           3.18.19 LM32 选项
+           3.18.20 M32C 选项
+           3.18.21 M32R/D 选项
+           3.18.22 M680x0 选项
+           3.18.23 MCore 选项
+           3.18.24 MeP 选项
+           3.18.25 MicroBlaze 选项
+           3.18.26 MIPS 选项
+           3.18.27 MMIX 选项
+           3.18.28 MN10300 选项
+           3.18.29 Moxie 选项
+           3.18.30 MSP430 选项
+           3.18.31 NDS32 选项
+           3.18.32 Nios II 选项
+           3.18.33 Nvidia PTX 选项
+           3.18.34 PDP-11 选项
+           3.18.35 picoChip 选项
+           3.18.36 PowerPC 选项
+           3.18.37 PowerPC SPE 选项
+           3.18.38 RISC-V 选项
+           3.18.39 RL78 选项
+           3.18.40 IBM RS/6000 and PowerPC 选项
+           3.18.41 RX 选项
+           3.18.42 S/390 and zSeries 选项
+           3.18.43 Score 选项
+           3.18.44 SH 选项
+           3.18.45 Solaris 2 选项
+           3.18.46 SPARC 选项
+           3.18.47 SPU 选项
+           3.18.48 System V 选项
+           3.18.49 TILE-Gx 选项
+           3.18.50 TILEPro 选项
+           3.18.51 V850 选项
+           3.18.52 VAX 选项
+           3.18.53 Visium 选项
+           3.18.54 VMS 选项
+           3.18.55 VxWorks 选项
+           3.18.56 x86 选项
+           3.18.57 x86 Windows 选项
+           3.18.58 Xstormy16 选项
+           3.18.59 Xtensa 选项
+           3.18.60 zSeries 选项          
+        3.19 指定子进程以及通过他们的开关
+        3.20 环境变量影响GCC
+        3.21 使用预编译头
+    4. C 实现定义的行为
+        4.1  翻译
+        4.2  环境
+        4.3  标识符
+        4.4  字符
+        4.5  整型
+        4.6  浮点
+        4.7  数组和指针
+        4.8  提示
+        4.9  结构体 联合体 枚举和位域
+        4.10 限定符
+        4.11 声明
+        4.13 预处理指令
+        4.14 库函数
+        4.15 架构
+        4.16 特定区域设置行为
+    5. C++ 实现定义的行为
+        5.1 有条件的支持行为
+        5.2 异常控制
+    6. 扩展到C语言
+        6.1 表达式中的陈述和声明
+        6.2 本地声明标签
+        6.3 把标签当做值
+        6.4 嵌套函数
+        6.5 调用构造函数
+        6.6 使用typeof 得到类型
+        6.7 省略操作数的条件控制
+        6.8 128-bit 整型
+        6.9 Double-Word 整型
+        6.10 复数
+        6.11 其他浮点型
+        6.12 半精度浮点
+        6.13 10 机制浮点数类型
+        6.14 16进制浮点
+        6.15 定点类型
+        6.16 命名地址空间
+        6.16.1 AVR 命名地址空间
+        6.16.2 M32C 命名地址空间
+        6.16.3 RL78 命名地址空间
+        6.16.4 SPU 命名地址空间
+        6.16.5 x86 命名地址空间
+        6.17 长度为0数组
+        6.18 没有成员的结构体
+        6.19 变长数组
+        6.20 参数数量可变的宏定义
+        6.21 Slightly Looser Rules for Escaped Newlines(翻译待定)
+        6.22 Non-Lvalue Arrays May Have Subscripts
+        6.23 Arithmetic on void- and Function-Pointers
+        6.24 Pointers to Arrays with Qualifiers Work as Expected
+        6.25 Non-Constant Initializers
+        6.26 Compound Literals
+        6.27 Designated Initializers
+        6.28 Case Ranges
+        6.29 Cast to a Union Type
+        6.30 Mixed Declarations and Code
+        6.31 Declaring Attributes of Functions
+        6.31.1 Common Function Attributes
+        6.31.2 AArch64 Function Attributes
+        6.31.2.1 Inlining rules
+        6.31.3 ARC Function Attributes
+        6.31.4 ARM Function Attributes
+        6.31.5 AVR Function Attributes
+        6.31.6 Blackfin Function Attributes
+        6.31.7 CR16 Function Attributes
+        6.31.8 Epiphany Function Attributes
+        6.31.9 H8/300 Function Attributes
+        6.31.10 IA-64 Function Attributes
+        6.31.11 M32C Function Attributes
+        6.31.12 M32R/D Function Attributes
+        6.31.13 m68k Function Attributes
+        6.31.14 MCORE Function Attributes
+        6.31.15 MeP Function Attributes
+        6.31.16 MicroBlaze Function Attributes
+        es
+        6.31.18 MIPS Function Attributes
+        6.31.19 MSP430 Function Attributes
+        6.31.20 NDS32 Function Attributes
+        6.31.21 Nios II Function Attributes
+        6.31.22 Nvidia PTX Function Attributes
+        6.31.23 PowerPC Function Attributes
+        6.31.24 RISC-V Function Attributes
+        6.31.25 RL78 Function Attributes
+        6.31.26 RX Function Attributes
+        6.31.27 S/390 Function Attributes
+        6.31.28 SH Function Attributes
+        6.31.29 SPU Function Attributes
+        6.31.30 Symbian OS Function Attributes
+        6.31.31 V850 Function Attributes
+        6.31.32 Visium Function Attributes
+        6.31.33 x86 Function Attributes
+        6.31.34 Xstormy16 Function Attributes
+        6.32 Specifying Attributes of Variables
+        6.32.1 Common Variable Attributes
+        6.32.2 ARC Variable Attributes
+        6.32.3 AVR Variable Attributes
+        6.32.4 Blackfin Variable Attributes
+        6.32.5 H8/300 Variable Attributes
+        6.32.6 IA-64 Variable Attributes
+        6.32.7 M32R/D Variable Attributes
+        6.32.8 MeP Variable Attributes
+        s
+        6.32.10 MSP430 Variable Attributes
+        6.32.11 Nvidia PTX Variable Attributes
+        6.32.12 PowerPC Variable Attributes
+        6.32.13 RL78 Variable Attributes
+        6.32.14 SPU Variable Attributes
+        6.32.15 V850 Variable Attributes
+        6.32.16 x86 Variable Attributes
+        6.32.17 Xstormy16 Variable Attributes
+        6.33 Specifying Attributes of Types
+        6.33.1 Common Type Attributes
+        6.33.2 ARC Type Attributes
+        6.33.3 ARM Type Attributes
+        6.33.4 MeP Type Attributes
+        6.33.5 PowerPC Type Attributes
+        6.33.6 SPU Type Attributes
+        6.33.7 x86 Type Attributes
+        6.34 Label Attributes
+        6.35 Enumerator Attributes
+        6.36 Statement Attributes
+        6.37 Attribute Syntax
+        nitions
+        6.39 C++ Style Comments
+        6.40 Dollar Signs in Identifier Names
+        6.41 The Character ESC in Constants
+        iables
+        ro
+        6.44 When is a Volatile Object Accessed?
+            C Code
+        ithout Operands
+        s with C Expression Operands
+        6.45.2.1 Volatile
+        6.45.2.2 Assembler Template
+        6.45.2.3 Output Operands
+        6.45.2.4 Flag Output Operands
+        6.45.2.5 Input Operands
+        6.45.2.6 Clobbers and Scratch Registers
+        6.45.2.7 Goto Labels
+        6.45.2.8 x86 Operand Modifiers
+        6.45.2.9 x86 Floating-Point asm Operands
+        6.45.3 Constraints for asm Operands
+        6.45.3.1 Simple Constraints
+        6.45.3.2 Multiple Alternative Constraints
+        6.45.3.3 Constraint Modifier Characters
+        s
+        Code
+        6.45.5 Variables in Specified Registers
+        6.45.5.1 Defining Global Register Variables
+        iables
+        6.45.6 Size of an asm
+        6.46 Alternate Keywords
+        6.47 Incomplete enum Types
+        6.48 Function Names as Strings
+            a Function
+        t-in Functions
+        6.51 Support for offsetof
+        tomic Memory Access
+        are Atomic Operations
+        ic with Overflow Checking
+        or Transactional Memory
+        s
+        ons
+        CC
+        lar Target Machines
+        6.59.1 AArch64 Built-in Functions
+        6.59.2 Alpha Built-in Functions
+        6.59.3 Altera Nios II Built-in Functions
+        6.59.4 ARC Built-in Functions
+        6.59.5 ARC SIMD Built-in Functions
+        6.59.6 ARM iWMMXt Built-in Functions
+        6.59.7 ARM C Language Extensions (ACLE)
+        l Intrinsics
+        6.59.9 ARM ARMv8-M Security Extensions
+        6.59.10 AVR Built-in Functions
+        6.59.11 Blackfin Built-in Functions
+        6.59.12 FR-V Built-in Functions
+        6.59.12.1 Argument Types
+        6.59.12.2 Directly-Mapped Integer Functions
+        6.59.12.3 Directly-Mapped Media Functions
+        6.59.12.4 Raw Read/Write Functions
+        6.59.12.5 Other Built-in Functions
+        6.59.13 MIPS DSP Built-in Functions
+        6.59.14 MIPS Paired-Single Support
+        6.59.15 MIPS Loongson Built-in Functions
+        6.59.15.1 Paired-Single Arithmetic
+        6.59.15.2 Paired-Single Built-in Functions
+        6.59.15.3 MIPS-3D Built-in Functions
+        t
+        unctions
+        6.59.17 Other MIPS Built-in Functions
+        6.59.18 MSP430 Built-in Functions
+        6.59.19 NDS32 Built-in Functions
+        6.59.20 picoChip Built-in Functions
+        6.59.21 PowerPC Built-in Functions
+        6.59.22 PowerPC AltiVec Built-in Functions
+        ry Built-in Functions
+        nctions
+        ctions
+        ctions
+        6.59.25 RX Built-in Functions
+        6.59.26 S/390 System z Built-in Functions
+        6.59.27 SH Built-in Functions
+        6.59.28 SPARC VIS Built-in Functions
+        6.59.29 SPU Built-in Functions
+        6.59.30 TI C6X Built-in Functions
+        6.59.31 TILE-Gx Built-in Functions
+        6.59.32 TILEPro Built-in Functions
+        6.59.33 x86 Built-in Functions
+        6.59.34 x86 Transactional Memory Intrinsics
+        ics
+        arget Machines
+        6.60.1 Solaris Format Checks
+        6.60.2 Darwin Format Checks
+        6.61 Pragmas Accepted by GCC
+        6.61.1 AArch64 Pragmas
+        6.61.2 ARM Pragmas
+        6.61.3 M32C Pragmas
+        6.61.4 MeP Pragmas
+        6.61.5 RS/6000 and PowerPC Pragmas
+        6.61.6 S/390 Pragmas
+        6.61.7 Darwin Pragmas
+        6.61.8 Solaris Pragmas
+        6.61.9 Symbol-Renaming Pragmas
+        6.61.10 Structure-Layout Pragmas
+        6.61.11 Weak Pragmas
+        6.61.12 Diagnostic Pragmas
+        6.61.13 Visibility Pragmas
+        6.61.14 Push/Pop Macro Pragmas
+        6.61.15 Function Specific Option Pragmas
+        6.61.16 Loop-Specific Pragmas
+        6.62 Unnamed Structure and Union Fields
+        6.63 Thread-Local Storage
+        ocal Storage
+        Local Storage
+            
