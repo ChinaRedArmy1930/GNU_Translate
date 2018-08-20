@@ -176,124 +176,123 @@ You have freedom to copy and modify this GNU Manual, like GNU software. Copies p
         6.19 变长数组
         6.20 参数数量可变的宏定义
         6.21 Slightly Looser Rules for Escaped Newlines(翻译待定)
-        6.22 Non-Lvalue Arrays May Have Subscripts
-        6.23 Arithmetic on void- and Function-Pointers
-        6.24 Pointers to Arrays with Qualifiers Work as Expected
-        6.25 Non-Constant Initializers
-        6.26 Compound Literals
-        6.27 Designated Initializers
-        6.28 Case Ranges
-        6.29 Cast to a Union Type
-        6.30 Mixed Declarations and Code
-        6.31 Declaring Attributes of Functions
-        6.31.1 Common Function Attributes
-        6.31.2 AArch64 Function Attributes
-        6.31.2.1 Inlining rules
-        6.31.3 ARC Function Attributes
-        6.31.4 ARM Function Attributes
-        6.31.5 AVR Function Attributes
-        6.31.6 Blackfin Function Attributes
-        6.31.7 CR16 Function Attributes
-        6.31.8 Epiphany Function Attributes
-        6.31.9 H8/300 Function Attributes
-        6.31.10 IA-64 Function Attributes
-        6.31.11 M32C Function Attributes
-        6.31.12 M32R/D Function Attributes
-        6.31.13 m68k Function Attributes
-        6.31.14 MCORE Function Attributes
-        6.31.15 MeP Function Attributes
-        6.31.16 MicroBlaze Function Attributes
-        es
-        6.31.18 MIPS Function Attributes
-        6.31.19 MSP430 Function Attributes
-        6.31.20 NDS32 Function Attributes
-        6.31.21 Nios II Function Attributes
-        6.31.22 Nvidia PTX Function Attributes
-        6.31.23 PowerPC Function Attributes
-        6.31.24 RISC-V Function Attributes
-        6.31.25 RL78 Function Attributes
-        6.31.26 RX Function Attributes
-        6.31.27 S/390 Function Attributes
-        6.31.28 SH Function Attributes
-        6.31.29 SPU Function Attributes
-        6.31.30 Symbian OS Function Attributes
-        6.31.31 V850 Function Attributes
-        6.31.32 Visium Function Attributes
-        6.31.33 x86 Function Attributes
-        6.31.34 Xstormy16 Function Attributes
-        6.32 Specifying Attributes of Variables
-        6.32.1 Common Variable Attributes
-        6.32.2 ARC Variable Attributes
-        6.32.3 AVR Variable Attributes
-        6.32.4 Blackfin Variable Attributes
-        6.32.5 H8/300 Variable Attributes
-        6.32.6 IA-64 Variable Attributes
-        6.32.7 M32R/D Variable Attributes
-        6.32.8 MeP Variable Attributes
-        s
-        6.32.10 MSP430 Variable Attributes
-        6.32.11 Nvidia PTX Variable Attributes
-        6.32.12 PowerPC Variable Attributes
-        6.32.13 RL78 Variable Attributes
-        6.32.14 SPU Variable Attributes
-        6.32.15 V850 Variable Attributes
-        6.32.16 x86 Variable Attributes
-        6.32.17 Xstormy16 Variable Attributes
-        6.33 Specifying Attributes of Types
-        6.33.1 Common Type Attributes
-        6.33.2 ARC Type Attributes
-        6.33.3 ARM Type Attributes
-        6.33.4 MeP Type Attributes
-        6.33.5 PowerPC Type Attributes
-        6.33.6 SPU Type Attributes
-        6.33.7 x86 Type Attributes
-        6.34 Label Attributes
-        6.35 Enumerator Attributes
-        6.36 Statement Attributes
-        6.37 Attribute Syntax
-        nitions
-        6.39 C++ Style Comments
-        6.40 Dollar Signs in Identifier Names
-        6.41 The Character ESC in Constants
-        iables
-        ro
-        6.44 When is a Volatile Object Accessed?
-            C Code
-        ithout Operands
-        s with C Expression Operands
+        6.22 Non-Lvalue Arrays May Have Subscripts(翻译待定)
+        6.23 Arithmetic on void- and Function-Pointers(翻译待定)
+        6.24 使带限定符的数组按预期工作
+        6.25 没有构造器的初始化
+        6.26 复合常量
+        6.27 指定初始化器
+        6.28 实例范围
+        6.29 强转为联合体类型
+        6.30 混合声明和代码
+        6.31 声明函数的属性
+        6.31.1 通用函数属性
+        6.31.2 AArch64 函数属性
+        6.31.2.1 内联规则
+        6.31.3 ARC 函数属性
+        6.31.4 ARM 函数属性
+        6.31.5 AVR 函数属性
+        6.31.6 Blackfin 函数属性
+        6.31.7 CR16 函数属性
+        6.31.8 Epiphany 函数属性
+        6.31.9 H8/300 函数属性
+        6.31.10 IA-64 函数属性
+        6.31.11 M32C 函数属性
+        6.31.12 M32R/D 函数属性
+        6.31.13 m68k 函数属性
+        6.31.14 MCORE 函数属性
+        6.31.15 MeP 函数属性
+        6.31.16 MicroBlaze 函数属性
+        6.31.17 Microsoft Windows 功能属性
+        6.31.18 MIPS 函数属性
+        6.31.19 MSP430 函数属性
+        6.31.20 NDS32 函数属性
+        6.31.21 Nios II 函数属性
+        6.31.22 Nvidia PTX 函数属性
+        6.31.23 PowerPC 函数属性
+        6.31.24 RISC-V 函数属性
+        6.31.25 RL78 函数属性
+        6.31.26 RX 函数属性
+        6.31.27 S/390 函数属性
+        6.31.28 SH 函数属性
+        6.31.29 SPU 函数属性
+        6.31.30 Symbian OS 函数属性
+        6.31.31 V850 函数属性
+        6.31.32 Visium 函数属性
+        6.31.33 x86 函数属性
+        6.31.34 Xstormy16 函数属性
+        6.32 指定变量的属性
+        6.32.1 通用变量属性
+        6.32.2 ARC 变量属性
+        6.32.3 AVR 变量属性
+        6.32.4 Blackfin 变量属性
+        6.32.5 H8/300 变量属性
+        6.32.6 IA-64 变量属性
+        6.32.7 M32R/D 变量属性
+        6.32.8 MeP 变量属性
+        6.32.9 Microsoft Windows变量属性
+        6.32.10 MSP430 变量属性
+        6.32.11 Nvidia PTX 变量属性
+        6.32.12 PowerPC 变量属性
+        6.32.13 RL78 变量属性
+        6.32.14 SPU 变量属性
+        6.32.15 V850 变量属性
+        6.32.16 x86 变量属性
+        6.32.17 Xstormy16 变量属性
+        6.33 指定类型属性
+        6.33.1 通用 类型属性
+        6.33.2 ARC 类型属性
+        6.33.3 ARM 类型属性
+        6.33.4 MeP 类型属性
+        6.33.5 PowerPC 类型属性
+        6.33.6 SPU 类型属性
+        6.33.7 x86 类型属性
+        6.34 标签 Attributes
+        6.35 枚举 Attributes
+        6.36 申明 Attributes
+        6.37 Attributes语法
+        6.38 标准函数定义和旧风格函数定义
+        6.39 C++ 风格注解
+        6.40 标识符中的美元符号
+        6.41 常量中的ESC符号
+        6.42 查询变量或类型的对其方式
+		6.43 内联函数和宏一样快
+        6.44 什么时候访问 Volatile 变量?
+        6.45 如何使在C代码中内嵌使用汇编语句
+        6.45.1 基础汇编 - 没有操作数的汇编语句
+        6.45.2 扩展汇编 - 带有C语言表达式操作数的汇编语句
         6.45.2.1 Volatile
-        6.45.2.2 Assembler Template
-        6.45.2.3 Output Operands
-        6.45.2.4 Flag Output Operands
-        6.45.2.5 Input Operands
-        6.45.2.6 Clobbers and Scratch Registers
-        6.45.2.7 Goto Labels
-        6.45.2.8 x86 Operand Modifiers
-        6.45.2.9 x86 Floating-Point asm Operands
-        6.45.3 Constraints for asm Operands
-        6.45.3.1 Simple Constraints
-        6.45.3.2 Multiple Alternative Constraints
-        6.45.3.3 Constraint Modifier Characters
-        s
-        Code
-        6.45.5 Variables in Specified Registers
-        6.45.5.1 Defining Global Register Variables
-        iables
-        6.45.6 Size of an asm
-        6.46 Alternate Keywords
-        6.47 Incomplete enum Types
-        6.48 Function Names as Strings
-            a Function
-        t-in Functions
-        6.51 Support for offsetof
-        tomic Memory Access
-        are Atomic Operations
-        ic with Overflow Checking
-        or Transactional Memory
-        s
-        ons
-        CC
-        lar Target Machines
+        6.45.2.2 汇编模板
+        6.45.2.3 输出操作对象
+        6.45.2.4 标记操作对象
+        6.45.2.5 输入对象
+        6.45.2.6 Clobbers and Scratch 寄存器
+        6.45.2.7 标签跳转
+        6.45.2.8 x86 操作数修饰符
+        6.45.2.9 x86 浮点数汇编操作符 
+        6.45.3 汇编操作符的限制
+        6.45.3.1 简单约束
+        6.45.3.2 多重选择约束
+        6.45.3.3 约束修饰符
+		6.45.3.4 个别机器的约束符
+        6.45.5 指定寄存器的变量
+        6.45.5.1 定义全局寄存器变量
+        6.45.5.2 指定局部变量寄存器的值
+        6.45.6 Size of an asm(翻译待定)
+        6.46 备用关键字 
+        6.47 不完全的枚举类型
+        6.48 使用字符串给函数命名
+        6.49 获得函数返回值或Frame Address(翻译待定)
+		6.50 通过 built-in 函数调用向量指令
+        6.51 offsetof支持
+        6.52 Legacy __sync Built-in Functions for Atomic Memory Access
+        6.53 Built-in Functions for Memory Model Aware Atomic Operations
+        6.54 Built-in Functions to Perform Arithmetic with Overflow Checking
+        6.55 x86-Specific Memory Model Extensions for Transactional Memory
+        6.56 Object Size Checking Built-in Functions
+        6.57 Pointer Bounds Checker Built-in Functions
+		6.58 Other Built-in Functions Provided by GCC
+		6.59 Built-in Functions Specific to Particular Target Machines
         6.59.1 AArch64 Built-in Functions
         6.59.2 Alpha Built-in Functions
         6.59.3 Altera Nios II Built-in Functions
