@@ -285,64 +285,64 @@ You have freedom to copy and modify this GNU Manual, like GNU software. Copies p
         6.49 获得函数返回值或Frame Address(翻译待定)
 		6.50 通过 built-in 函数调用向量指令
         6.51 offsetof支持
-        6.52 Legacy __sync Built-in Functions for Atomic Memory Access
-        6.53 Built-in Functions for Memory Model Aware Atomic Operations
-        6.54 Built-in Functions to Perform Arithmetic with Overflow Checking
-        6.55 x86-Specific Memory Model Extensions for Transactional Memory
-        6.56 Object Size Checking Built-in Functions
-        6.57 Pointer Bounds Checker Built-in Functions
-		6.58 Other Built-in Functions Provided by GCC
-		6.59 Built-in Functions Specific to Particular Target Machines
-        6.59.1 AArch64 Built-in Functions
-        6.59.2 Alpha Built-in Functions
-        6.59.3 Altera Nios II Built-in Functions
-        6.59.4 ARC Built-in Functions
-        6.59.5 ARC SIMD Built-in Functions
-        6.59.6 ARM iWMMXt Built-in Functions
-        6.59.7 ARM C Language Extensions (ACLE)
-        l Intrinsics
-        6.59.9 ARM ARMv8-M Security Extensions
-        6.59.10 AVR Built-in Functions
-        6.59.11 Blackfin Built-in Functions
-        6.59.12 FR-V Built-in Functions
-        6.59.12.1 Argument Types
-        6.59.12.2 Directly-Mapped Integer Functions
-        6.59.12.3 Directly-Mapped Media Functions
-        6.59.12.4 Raw Read/Write Functions
-        6.59.12.5 Other Built-in Functions
-        6.59.13 MIPS DSP Built-in Functions
-        6.59.14 MIPS Paired-Single Support
-        6.59.15 MIPS Loongson Built-in Functions
-        6.59.15.1 Paired-Single Arithmetic
-        6.59.15.2 Paired-Single Built-in Functions
-        6.59.15.3 MIPS-3D Built-in Functions
-        t
-        unctions
-        6.59.17 Other MIPS Built-in Functions
-        6.59.18 MSP430 Built-in Functions
-        6.59.19 NDS32 Built-in Functions
-        6.59.20 picoChip Built-in Functions
-        6.59.21 PowerPC Built-in Functions
-        6.59.22 PowerPC AltiVec Built-in Functions
-        ry Built-in Functions
-        nctions
-        ctions
-        ctions
-        6.59.25 RX Built-in Functions
-        6.59.26 S/390 System z Built-in Functions
-        6.59.27 SH Built-in Functions
-        6.59.28 SPARC VIS Built-in Functions
-        6.59.29 SPU Built-in Functions
-        6.59.30 TI C6X Built-in Functions
-        6.59.31 TILE-Gx Built-in Functions
-        6.59.32 TILEPro Built-in Functions
-        6.59.33 x86 Built-in Functions
-        6.59.34 x86 Transactional Memory Intrinsics
-        ics
-        arget Machines
-        6.60.1 Solaris Format Checks
-        6.60.2 Darwin Format Checks
-        6.61 Pragmas Accepted by GCC
+        6.52 _sync 内建函数和原子内存访问(翻译待定)
+        6.53 用于原子操作访问内存模型的内建函数
+        6.54 使用算数执行溢出检测的内建函数
+        6.55 x86-Specific事务性内存模型扩展
+        6.56 检测对象大小的内建函数
+        6.57 检测指针边界的内建函数
+		6.58 GCC提供的其他内建函数
+		6.59 指定机器专用的内建函数
+        6.59.1 AArch64 内建函数
+        6.59.2 Alpha 内建函数
+        6.59.3 Altera Nios II 内建函数
+        6.59.4 ARC 内建函数
+        6.59.5 ARC 内建函数
+        6.59.6 ARM 内建函数
+        6.59.7 ARM C 语言扩展 (ACLE)
+        6.59.8 ARM 浮点状态以及控制内嵌函数 
+        6.59.9 ARM ARMv8-M 安全扩展
+        6.59.10 AVR 内建函数
+        6.59.11 Blackfin 内建函数
+        6.59.12 FR-V 内建函数
+        6.59.12.1 参数类型
+        6.59.12.2 直接映射整型函数
+        6.59.12.3 Directly-Mapped Media Functions(翻译待定)
+        6.59.12.4 Raw 读写函数
+        6.59.12.5 Other 内建函数
+        6.59.13 MIPS DSP 内建函数
+        6.59.14 MIPS 精度浮点 支持
+        6.59.15 MIPS 龙芯 内建函数
+        6.59.15.1 精度浮点算法
+        6.59.15.2 精度浮点 内建函数
+        6.59.15.3 MIPS-3D 内建函数
+        6.59.16 MIPS SIMD 架构 (MSA) 支持
+		6.59.16.1 MIPS SIMD 架构 内建函数
+        6.59.17 Other MIPS 内建函数
+        6.59.18 MSP430 内建函数
+        6.59.19 NDS32 内建函数
+        6.59.20 picoChip 内建函数
+        6.59.21 PowerPC 内建函数
+        6.59.22 PowerPC AltiVec 内建函数
+        6.59.23 PowerPC 硬件事务内存 内建函数
+		6.59.23.1 PowerPC HTM Low Level 内建函数
+		6.59.23.2 PowerPC HTM High Level 内联函数
+		6.59.24 PowerPC 内存原子操作函数
+        6.59.25 RX 内联函数
+        6.59.26 S/390 System z 内联函数
+        6.59.27 SH 内联函数
+        6.59.28 SPARC VIS 内联函数
+        6.59.29 SPU 内联函数
+        6.59.30 TI C6X 内联函数
+        6.59.31 TILE-Gx 内联函数
+        6.59.32 TILEPro 内联函数
+        6.59.33 x86 内联函数
+        6.59.34 x86 事务内存内联函数
+        6.59.35 x86 流程控制保护内联函数
+		6.60 特殊机器的格式化检测
+        6.60.1 Solaris 格式化检测
+        6.60.2 Darwin 格式化检测
+        6.61 GCC提供的Pragmas 
         6.61.1 AArch64 Pragmas
         6.61.2 ARM Pragmas
         6.61.3 M32C Pragmas
@@ -351,16 +351,93 @@ You have freedom to copy and modify this GNU Manual, like GNU software. Copies p
         6.61.6 S/390 Pragmas
         6.61.7 Darwin Pragmas
         6.61.8 Solaris Pragmas
-        6.61.9 Symbol-Renaming Pragmas
-        6.61.10 Structure-Layout Pragmas
+        6.61.9 重命名符号 Pragmas
+        6.61.10 结构体布局 Pragmas
         6.61.11 Weak Pragmas
-        6.61.12 Diagnostic Pragmas
-        6.61.13 Visibility Pragmas
-        6.61.14 Push/Pop Macro Pragmas
-        6.61.15 Function Specific Option Pragmas
-        6.61.16 Loop-Specific Pragmas
-        6.62 Unnamed Structure and Union Fields
-        6.63 Thread-Local Storage
-        ocal Storage
-        Local Storage
+        6.61.12 诊断 Pragmas
+        6.61.13 可见性 Pragmas
+        6.61.14 Push/Pop 宏 Pragmas
+        6.61.15 特殊函数选项 Pragmas
+        6.61.16 循环特定 Pragmas
+        6.62 未命名的结构体和联合体字段
+        6.63 线程局部存储       
+		6.63.1 ISO/IEC 9899:1999 Edits 线程局部存储   
+		6.63.2 ISO/IEC 14882:1998 Edits 线程局部存储   
+		6.64 二进制常量使用 '0b' 开头
+		7 扩展到C++
+		7.1 何时访问 Volatile C++ 对象? 
+		7.2 限制指针别名
+		7.3 模糊联系
+		7.4 C ++接口和实现Pragma
+		7.5 模板在哪里？
+		7.6 将绑定指针中的函数指针提取到成员函数
+		7.7 C++ - 特定的变量，函数和类型属性
+		7.8 功能多元化
+		7.9 类型特征
+		7.10 C++概念
+		7.11不推荐使用的功能
+		7.12向后兼容性
+		8 GNU Objective-C功能
+		8.1 GNU Objective-C运行时API
+		8.1.1现代GNU Objective-C运行时API
+		8.1.2传统的GNU Objective-C运行时API
+		8.2 +load：之前执行代码main
+		8.2.1你能做什么和不能做什么 +load
+		8.3类型编码
+		8.3.1传统类型编码
+		8.3.2 @encode
+		8.3.3方法签名
+		8.4垃圾收集
+		8.5常量字符串对象
+		8.6 compatibility_alias
+		8.7例外情况
+		8.8同步
+		8.9快速枚举
+		8.9.1使用快速枚举
+		8.9.2类似C99的快速枚举语法
+		8.9.3快速枚举详细信息
+		8.9.4快速枚举协议
+		8.10使用GNU Objective-C运行时进行消息传递
+		8.10.1动态注册方法
+		8.10.2转发钩
+		9 二进制兼容性
+		10 gcov—a Test Coverage Program
+		10.1 Introduction to gcov
+		10.2 Invoking gcov
+		10.3 Using gcov with GCC Optimization
+		10.4 Brief Description of gcov Data Files
+		10.5 Data File Relocation to Support Cross-Profiling
+		11 gcov-tool—an Offline Gcda Profile Processing Tool
+		11.1 Introduction to gcov-tool
+		11.2 Invoking gcov-tool
+		12 gcov-dump—an Offline Gcda and Gcno Profile Dump Tool
+		12.1 Introduction to gcov-dump
+		12.2 Invoking gcov-dump
+		13 Known Causes of Trouble with GCC
+		13.1 Actual Bugs We Haven’t Fixed Yet
+		13.2 Interoperation
+		13.3 Incompatibilities of GCC
+		13.4 Fixed Header Files
+		13.5 Standard Libraries
+		13.6 Disappointments and Misunderstandings
+		13.7 Common Misunderstandings with GNU C++
+		13.7.1 Declare and Define Static Members
+		13.7.2 Name Lookup, Templates, and Accessing Members of Base Classes
+		13.7.3 Temporaries May Vanish Before You Expect
+		13.7.4 Implicit Copy-Assignment for Virtual Bases
+		13.8 Certain Changes We Don’t Want to Make
+		13.9 Warning Messages and Error Messages
+		14 Reporting Bugs
+		14.1 Have You Found a Bug?
+		14.2 How and Where to Report Bugs
+		15 How To Get Help with GCC
+		16 Contributing to GCC Development
+		Funding Free Software
+		The GNU Project and GNU/Linux
+		GNU General Public License
+		GNU Free Documentation License
+		ADDENDUM: How to use this License for your documents
+		Contributors to GCC
+		Option Index
+		Keyword Index
             
