@@ -1,0 +1,17 @@
+source url: https://gcc.gnu.org/onlinedocs/
+                        GCC online documentation	
+Last release	
+以下是最新且完成的文档。	
+ GCC 8.2手册:	
+    GCC 8.2 文档(pdf版,PostScript版,HTML版)	
+    GCC 8.2 GNU Fortran 手册(pdf版,PostScript版,HTML版)	
+    GCC 8.2 CPP 手册(pdf版,PostScript版,HTML版)	
+    GCC 8.2 GNAT 参考手册(pdf版,PostScript版,HTML版)	
+    GCC 8.2 GNAT 用户指南(pdf版,PostScript版,HTML版)	
+    GCC 8.2 标准C++ library 手册(pdf版,PostScript版,HTML版)	
+    GCC 8.2 标准C++ library  用户指南(pdf版,PostScript版,HTML版)	
+    GCC 8.2 go 语言手册(pdf版,PostScript版,HTML版)	
+    GCC 8.2 GNU openMP 手册(pdf版,PostScript版,HTML版)	
+    GCC 8.2 Quad-Precision 数学库手册(pdf版,PostScript版,HTML版)	
+    GCC 8.2 JIT(译者注:Just In Time) 库(pdf版,PostScript版,HTML版)	
+    GCC 8.2 所有Texinfo文档来源
