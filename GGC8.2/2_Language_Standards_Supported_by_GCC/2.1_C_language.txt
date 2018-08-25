@@ -1,0 +1,46 @@
+source url: https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/Standards.html#C-Language
+
+2.1 C语言
+
+最初的 ANSI C标准(X3.159-1989) 在1989年被批准, 在1990年推出。这个标准在1990年被批准为ISO标准(ISO/IEC 9899:1990)。这些出版的标准之间没有差异, 虽然ANSI标准的各部分重新编号且成为了ISO的条款, 但是ANSI标准(不是ISO标准)仍然带有基本原理文档. 从批准之日算起, 这两种形式的标准, 以C89或者C99被我们所熟知。 如果想在GCC中选择这个标准, 请使用 -ansi -std=c90 或者 -std=iso9899:1990. 如果想获得这个标准的所有"诊断"信息(译者注: 即不符合该标准的code),你应该指定  -pedantic (或者 -pedantic-errors 如果你希望把警告当做错误)。具体查看 See Options Controlling C Dialect(https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/C-Dialect-Options.html#C-Dialect-Options).
+
+1990年的ISO C标准中的错误在1994年和1996年的勘误表中得到更正。GCC不支持未勘误的版本。
+
+1990年的修正案在1995年出版, 该修正案添加了有向图和__STDC_VERSION__, 其他方面和库有关, 这份修正案又被称为 AMD1, C94或C95.使用   -std=iso9899:199409 选择这些标准。
+
+新版 ISO C标准在1999年出版(ISO/IEC 9899:1999), 又被称为 C99(在开发中,这个版本的草稿被称为C9X)。GCC 完全支持这个版本, 具体查看 http://gcc.gnu.org/c99status.html,使用-std=c99 或者 -std=iso9899:1999 选择这些标准。
+
+1999年出版的 ISO C 中出现的错误在 2001 2004 2007 年的勘误表中被修正.GCC不支持未勘误的版本。
+
+C标准的第4个版本被称为C11, 在2011年出版的 ISO/IEC 9899:2011(在开发中,这个版本的草稿被称为 C1X),GCC 完全支持这个标准,使用 -std=c11 或 -std=iso9899:2011 选择这些标准。C17是C11更正后的版本, 选项为 -std=c17 or -std=iso9899:2017, 这些更新同样适用于 -std=c11, 这两个选项唯一的区别是__STDC_VERSION__。
+
+默认情况下, GCC会提供一些C语言扩展, 只会在很少的情况下发生冲突。具体查看Extensions to the C Language Family(https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/C-Extensions.html#C-Extensions). 其中的一些特性是C99的一部分但同样也能被C90作为扩展接受。一些特性是C11的一部分但同样也能被C90和C99作为扩展接受。使用上面列出的-std选项将禁用这些扩展，因为它们与所选的C标准版本冲突. 你仍然可以使用 -std=gnu90(C90),-std=gnu99(C99)选择一个扩展版本, 
+
+默认情况下, 如果没有指定C标准选项, 则默认是-std=gnu11。
+
+ISO C标准定义了两类符合标准的实现,一类遵守hosted implementation,支持是所有的标准包括所有的库文件. 另一类支持 freestanding implementation 仅仅提供一定的库文件包括 <float.h>, <limits.h>, <stdarg.h>, <stddef.h>; 直到AMD1, 是<iso646.h>;直到 C99,是 <stdbool.h> and <stdint.h>;C11 是<stdalign.h> and <stdnoreturn.h>;与此同时, C99添加的复杂类型不是freestanding implementations所必须的。
+
+GCC 目标是成为标准的reestanding implementation, 或者作为符合 hosted implementation的编译器。默认情况下, 
+它是符合hosted implementation的编译器。定义宏 __STDC_HOSTED__  为 1 并且假设当ISO C命名的函数被使用, 会在标准中定义semantics . 使用 -ffreestanding 在 freestanding 环境中遵守freestanding implementation,它将会定义__STDC_HOSTED__ 为 0 且不会对标准库中的名字做出假设, 除了下面的情况。如果想编一个kernel操作系统, 你可能需要自己安排链接和启动。参考  Options Controlling C Dialect(https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/C-Dialect-Options.html#C-Dialect-Options).
+
+GCC 不提供 hosted implementations使用的标准库, 也不提供 freestanding implementations 中C99 使用的标准库。如果想使用这些库文件,你应该在其他地方(例如  GNU C库)找这些文件，参考 Standard Libraries(https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/Standard-Libraries.html#Standard-Libraries).
+
+获取更多勘误, 文档, 历史等信息 参考http://gcc.gnu.org/readings.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
