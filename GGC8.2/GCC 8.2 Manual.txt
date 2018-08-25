@@ -401,43 +401,35 @@ You have freedom to copy and modify this GNU Manual, like GNU software. Copies p
 		8.10.1动态注册方法
 		8.10.2转发钩
 		9 二进制兼容性
-		10 gcov—a Test Coverage Program
-		10.1 Introduction to gcov
-		10.2 Invoking gcov
-		10.3 Using gcov with GCC Optimization
-		10.4 Brief Description of gcov Data Files
-		10.5 Data File Relocation to Support Cross-Profiling
-		11 gcov-tool—an Offline Gcda Profile Processing Tool
-		11.1 Introduction to gcov-tool
-		11.2 Invoking gcov-tool
-		12 gcov-dump—an Offline Gcda and Gcno Profile Dump Tool
-		12.1 Introduction to gcov-dump
-		12.2 Invoking gcov-dump
-		13 Known Causes of Trouble with GCC
-		13.1 Actual Bugs We Haven’t Fixed Yet
-		13.2 Interoperation
-		13.3 Incompatibilities of GCC
-		13.4 Fixed Header Files
-		13.5 Standard Libraries
-		13.6 Disappointments and Misunderstandings
-		13.7 Common Misunderstandings with GNU C++
-		13.7.1 Declare and Define Static Members
-		13.7.2 Name Lookup, Templates, and Accessing Members of Base Classes
-		13.7.3 Temporaries May Vanish Before You Expect
-		13.7.4 Implicit Copy-Assignment for Virtual Bases
-		13.8 Certain Changes We Don’t Want to Make
-		13.9 Warning Messages and Error Messages
-		14 Reporting Bugs
-		14.1 Have You Found a Bug?
-		14.2 How and Where to Report Bugs
-		15 How To Get Help with GCC
-		16 Contributing to GCC Development
-		Funding Free Software
-		The GNU Project and GNU/Linux
-		GNU General Public License
-		GNU Free Documentation License
-		ADDENDUM: How to use this License for your documents
-		Contributors to GCC
-		Option Index
-		Keyword Index
+		10 gcov—a 测试覆盖计划
+		10.1 gcov 介绍
+		10.2 调用 gcov
+		10.3 使用 GCC 优化的 gcov 
+		10.4 gocv 文件简单说明 
+		10.5 重定位文件来交叉分析
+		11 gcov-tool—an Offline Gcda Profile Processing Tool(翻译待定)
+		11.1 gcov-tool 介绍
+		11.2 调用 gcov-tool
+		12 gcov-dump—an Offline Gcda and Gcno Profile Dump Tool(翻译待定)
+		12.1 gcov-dump 介绍 
+		12.2 调用 gcov-dump 
+		13 GCC 已知问题
+		13.1 已知未修复的BUG
+		13.2 Interoperation(翻译待定)
+		13.3 GCC 不兼容性
+		13.4 修改的头文件
+		13.5 标准库
+		13.6 Disappointments and Misunderstandings(翻译待定)
+		13.7 GNU C++ 常见错误
+		13.7.1 声明
+		13.7.2 基本类的名称查找，模板和访问成员
+		13.7.3 临时工作可能会在你预期之前消失
+		13.7.4 虚拟基础的隐式复制分配
+		13.8 我们不想做出的某些改变
+		13.9 警告消息和错误消息
+		14 报告BUG
+		14.1 你发现了一个Bug吗？
+		14.2 如何以及在何处报告错误
+		15 如何获得GCC的帮助
+		16 为GCC发展做出贡献
             
