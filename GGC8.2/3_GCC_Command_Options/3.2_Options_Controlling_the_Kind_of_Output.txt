@@ -1,0 +1,55 @@
+url:https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/Overall-Options.html#Overall-Options
+
+3.2 选项控制输出格式
+	编译可以被总结为4步(按顺序):预编译,编译,汇编和链接。GCC擅长预编译和编译多个文件到多个汇编文件或者一个汇编文件中. 然后每一个汇编文件生成一个object文件(译者注: .o 文件)。最后链接所有的 .o 文件生成可执行文件。
+
+	
+	对于任何给定的文件, 文件的后缀和处在编译的哪一步是确定的:
+	file.c
+		C语言源代码,且必须被预编译。
+	file.i
+		C语言代码,不需要预编译(译者注:或者可以理解为已经被预编译)、
+	file.ii
+		C++语言代码,不需要预编译
+	file.m
+		Objective-C代码, 必须链接libobjc 库使Objective-C项目工作。
+	file.mi
+		Objective-C语言代码,不需要预编译
+	file.mm
+	file.M
+		Objective-C++代码, 必须链接libobjc 库使Objective-C++项目工作。注意 '.M'大写。
+	file.h
+		C, C++, Objective-C or Objective-C++ 头文件。会在预编译时替换到文件的头部。使用 -fdump-ada-spec选型会生成ada文件。(译者注: 在本目录下的testDemo目录中 使用 gcc test_demo.c -fdump-ada-spec 会生成 test_demo_c.ads, 使用 gcc test_demo.h -fdump-ada-spec 会生成 test_demo_h.ads. ada简介:http://www.360doc.com/content/12/0806/09/1671317_228581476.shtml)
+	
+	file.cc
+	file.cp
+	file.cxx
+	file.cpp
+	file.CPP
+	file.c++
+	file.C
+		C语言源代码,且必须被预编译。注意 .cxx 有两个x。 .C 大写
+	
+	file.mm
+	file.M
+		Objective-C++语言源代码,且必须被预编译。
+	file.mii
+		Objective-C++语言代码,不需要预编译
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
