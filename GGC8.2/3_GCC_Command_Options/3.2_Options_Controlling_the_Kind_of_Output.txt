@@ -36,20 +36,142 @@ url:https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/Overall-Options.html#Overall-Op
 	file.mii
 		Objective-C++语言代码,不需要预编译
 	
+	file.hh
+	file.H
+	file.hp
+	file.hxx
+	file.hpp
+	file.HPP
+	file.h++
+	file.tcc
+		C ++头文件,会被转换为预编译头或Ada规范。
 		
+	file.f
+	file.for
+	file.ftn
+	Fixed形式不应预处理的Fortran源代码。
+
+	file.F
+	file.FOR
+	file.fpp
+	file.FPP
+	file.FTN
+	Fixed形式预处理的Fortran源代码（使用传统的预处理器）。	
 		
+	file.f90
+	file.f95
+	file.f03
+	file.f08
+	自由形式的Fortran源代码，不应该进行预处理。
+
+	file.F90
+	file.F95
+	file.F03
+	file.F08
+	自由形式的Fortran源代码，必须进行预处理(使用传统的预处理器)。
 		
+	file.go
+	go 语言源码
 		
+	file.brig
+	BRIG文件（HSAIL的二进制表示）。
+	
+	file.ads
+	Ada源代码文件，包含库单元声明(包的声明,子软件,通用声明)，或库单元重命名声明(包，通用或子程序重命名声明)。这些文件也称为specs。
 		
+	file.s
+	汇编代码
+	
+	file.S
+	file.sx
+	需要被预编译的汇编
+	
+	other
+	要直接送入链接的目标文件。任何没有识别后缀的文件名都以这种方式处理。
 		
+	你可以显式使用 -x 指定语言:
+	-x language
+	明确的为该选项后面的的输入文件指定语言(而不是通过文件的后缀让编译器自己识别),该选项适用于后面的所有输入文件，知道下一个 -x。language的可能值为:
+	c  c-header  cpp-output
+	c++  c++-header  c++-cpp-output
+	objective-c  objective-c-header  objective-c-cpp-output
+	objective-c++ objective-c++-header objective-c++-cpp-output
+	assembler  assembler-with-cpp
+	ada
+	f77  f77-cpp-input f95  f95-cpp-input
+	go
+	brig
 		
-		
-		
-		
-		
-		
-		
-		
-		
+	-x none
+	关闭所有的language规范,使得文件能够根据他们的后缀被处理.(如果 -x 选项没有被使用过)。
+	
+	如果你仅仅想得到编译的各个阶段,你可以使用 -x(或者文件名后缀)告诉GCC从哪里开始,并且使用 -c -S 或 -E 告诉GCC从哪里结束。请注意, 一些选项的组合不能使得GCC工作(例如: '-x cpp-output -E’)
+	
+	-c 
+	编译或汇编源码文件,但是不链接。链接阶段没有完成。最终的输入文件是 object 文件.
+	一般来说, object 文件是将源文件的后缀 .c .s .i 等替换为 .object
+	对于无法识别, 或者不需要编译或汇编的文件将会被忽略。
+	
+	-S
+	编译后停止,不作汇编操作。对于每个未汇编过的输入文件,输入文件是汇编代码。
+	一般来说,汇编文件是将源文件的后缀 .c .i 替换为 .shtml
+	
+	不识别的输如文件将会被忽略
+	
+	-E
+	预编译后停止, 不作编译操作,输出的是预编译代码,该输出将会发送到标准输出。
+	
+	不需要预编译的文件将会被忽略。
+	
+	-o file 
+	指定输出文件为file.这适用于任何形式的输出,不管是得到可执行文件,.o文件,汇编文件 或者是预处理文件。
+	如果没有指定 -o, 则默认的可执行文件的输出文件为 a.out,source.suffix 的.o文件为source.o,其汇编形式为 source.s,预编译头文件形式为 source.suffix.gch, 且所有的预编译C代码显示在标准输出。
+	
+	-v
+	在标准输出上显示编译阶段的指令,同时将编译驱动的版本号,预编译器和编译器的版本号打印出来。
+
+	-###
+	类似 -v,但是这个选项并不具有编译动作.仅仅显示编译过程。这对于s​​hell脚本捕获驱动程序生成的命令行很有用。(译者注:参考 https://elinux.org/GCC_Tips#Tips)
+	
+	--help
+	在标准输出打印GCC命令行选项,如果同时指定了-v,--help将会传递GCC调用的进程。因此它能显示所有GCC能接受的编译选项,如果同时指定了  -Wextra 选项(在--help 之前),会显示 没有与其相关的文档的命令行选项。
+	
+	--target-help
+	在标准输出打印工具的 target-specific命令行选项描述。对于一些目标,还会打印额外的信息。
+	
+	--help={class|[^]qualifier}[,…]
+	在标准输出打印编译器编译选项的描述, 适用于所有的指定的 class 和qualifier,支持的class如下:
+	
+	‘optimizers’
+	显示所有的编译器支持的优化选项.(译者注:   gcc --help='optimizers')
+	
+	‘warnings’
+	显示所有的编译器控制警告信息的选项
+	
+	‘target’
+	显示特殊目标选项,和 --target-help 不一样, 链接和汇编的target-specific 并不显示.因为这些工具目前不支持扩展--help = 句法。
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
