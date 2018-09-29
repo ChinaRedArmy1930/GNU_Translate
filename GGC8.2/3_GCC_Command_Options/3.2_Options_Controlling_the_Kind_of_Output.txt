@@ -151,27 +151,67 @@ url:https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/Overall-Options.html#Overall-Op
 	‘target’
 	显示特殊目标选项,和 --target-help 不一样, 链接和汇编的target-specific 并不显示.因为这些工具目前不支持扩展--help = 句法。
 	
+	‘params’
+	显示被 --param选项识别的值(译者注: 使用 gcc --help='params' 显示所有的value, 比如有一个值为:predictable-branch-outcom ,使用 :gcc  1.c --param predictable-branch-outcome=20 这样的方法(NAME=VALUE)使用它)
+	
+	language
+	显示语言支持的选项,这些语言必须要能被GCC支持 (译者注:  gcc --help='c++')
+	
+	‘common’
+	显示所有语言公共的选项
+	
+	‘undocumented’
+	显示所有没有文档的选项(译者注: 提示 This switch lacks documentation)
+	
+	‘joined’
+	显示带有参数的选项,该选项的要求是出现在等号后面。 例如‘--help=target’
+	
+	‘separate’
+	显示带有参数的选项,该选项的要求是单独的单词跟随着原始选项。例如 ‘-o output-file’
+	
+	例如, 想要显示没有文档的和编译器支持的特殊机器目标的编译选项,使用:
+	--help=target,undocumented
+	
+	可以通过在参数的前面添加限制符^, 从而不显示限制符后面的选项。例如想要显示所有的警告选项(除了joined 和undocumented类型的),使用:
+	--help=warnings,^joined,^undocumented
+	
+	注意:--help= 不能只给反向限定符
+	
+	合并多个参数是没问题的,尽管这样可能因为约束问题导致什么都显示不出来.一种能显示出来的情况是输入的值中有 target,例如我想要显示所有的特殊机器目标的优化选项:
+	--help=target,optimizers
+	
+	--help=选项能重复使用,会连续显示请求的参数,以及跳过重复的参数。
+	
+	如果 -Q 在 --help之前被使用,那么 --help 的描述将会被改变。取而代之的是显示一个选项,显示每一个值的状态,disabled ,enabled 或者其他特殊的值(假设编译器在使用-help=选项的时候知道这一点)
+	
+	如下是ARM下GCC的一个例子:
+	  % gcc -Q -mabi=2 --help=target -c
+	The following options are target specific:
+	-mabi=                                2
+	-mabort-on-noreturn                   [disabled]
+	-mapcs                                [disabled]
 	
 	
+	输入对命令行前面的选项十分敏感,例如如下例子显示-O2优化中的选项:
+	-Q -O2 --help=optimizers
+	
+	你还可以查看-O3使用的优化选项:
+	gcc -c -Q -O3 --help=optimizers > /tmp/O3-opts
+	gcc -c -Q -O2 --help=optimizers > /tmp/O2-opts
+	diff /tmp/O2-opts /tmp/O3-opts | grep enabled
 	
 	
+	--version
+	显示gcc版本和版权
 	
+	-pass-exit-codes
+	正常情况下在GCC工程中,如果编译器在任何阶段返回不成功的状态,则错误码返回值为1。如果你指定了 -pass-exit-codes ,GCC工程将会使用更高等级的错误数字替换1.如果遇到内部编译器错误，C、c++和Fortran前端返回4。
 	
+	-pipe
+	在编译的各个阶段之间使用管道而不是临时文件进行通信,在某些系统汇编器不会读pipe, GNU没这个问题
 	
+	-specs=file
+	编译器读入标准规格文件后处理文件,为了覆盖gcc驱动程序在确定要传递给cc1、cc1plus、as、ld的开关时使用的默认设置.命令行可以输入不止一个的-specs=file,从做到右按顺序读入.参考https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/Spec-Files.html#Spec-Files参阅更多信息。
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
